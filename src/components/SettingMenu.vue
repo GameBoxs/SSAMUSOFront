@@ -4,29 +4,29 @@
             <p class="menuHead" style="margin-top:30px;">유저 설정</p>
         </div>
         <div class="menuItem">
-            <p>개인 정보</p>
+            <p @click="clickItem('info')">개인 정보</p>
         </div>
         <div class="menuItem">
-            <p>커리어 정보</p>
+            <p @click="clickItem('career')">커리어 정보</p>
         </div>
         <div class="menuItem">
-            <p>작성한 글&댓글</p>
+            <p @click="clickItem('mypost')">작성한 글&댓글</p>
         </div>
         <div class="menuItem">
-            <p>팀 목록</p>
+            <p @click="clickItem('teamlist')">팀 목록</p>
         </div>
         <hr/>
         <div>
             <p class="menuHead" style="margin-top:30px;">일반 설정</p>
         </div>
         <div class="menuItem">
-            <p>알림</p>
+            <p @click="clickItem('alarm')">알림</p>
         </div>
         <div class="menuItem">
-            <p>Contact Us</p>
+            <p @click="clickItem('contactus')">Contact Us</p>
         </div>
         <div class="menuItem">
-            <p>Version Info</p>
+            <p @click="clickItem('versioninfo')">Version Info</p>
         </div>
     </div>
 </template>
@@ -46,7 +46,10 @@ export default {
     },
 
     methods: {
-        
+        clickItem(name) {
+            console.log(name);
+            this.$emit('view-name', name);
+        }
     },
 };
 </script>

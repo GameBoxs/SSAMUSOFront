@@ -1,7 +1,7 @@
 <template>
     <div class="settingMainDiv">
-        <span class="menu"> <setting-menu /> </span>
-        <span> test2 </span>
+        <span class="menu"> <setting-menu @view-name="changeViewName"/> </span>
+        <router-view :name="name"/>
     </div>
 </template>
 
@@ -12,7 +12,7 @@ export default {
 
     data() {
         return {
-            
+            name: 'info',
         };
     },
 
@@ -21,7 +21,9 @@ export default {
     },
 
     methods: {
-        
+        changeViewName(changename) {
+            this.name = changename;
+        }
     },
     components: {
         SettingMenu,
