@@ -7,14 +7,9 @@
       </div>
     </div>
   </transition>
+  <!-- Setting Modal Button -->
+  <span><font-awesome-icon :icon="['fas','gear']" class="settingBtn" @click="modalClick"/></span>
   <!-- Setting Modal End -->
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> |
-    <!-- Setting Modal Button -->
-    <span><font-awesome-icon :icon="['fas','gear']" class="settingBtn" @click="modalClick"/></span>
-  </nav>
-  <router-view/>
 </template>
 
 <script>
