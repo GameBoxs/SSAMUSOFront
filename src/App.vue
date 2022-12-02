@@ -1,10 +1,12 @@
 <template>
   <!-- Setting Modal Start (by.KJH) -->
-  <div class="BG-black" v-show="isModalOpen" @mousedown="closeModal">
-    <div class="BG-white">
-      <setting-modal/>
+  <transition name="fade">
+    <div class="BG-black" v-show="isModalOpen" @mousedown="closeModal">
+      <div class="BG-white">
+        <setting-modal/>
+      </div>
     </div>
-  </div>
+  </transition>
   <!-- Setting Modal End -->
   <nav>
     <router-link to="/">Home</router-link> |
@@ -99,6 +101,32 @@ nav a.router-link-exact-active {
   .BG-black {
     justify-content: left;
   }
+}
+
+/* 페이드 인 효과 */
+.fade-enter-from {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  transition: all 0.5s;
+}
+
+.fade-enter-to {
+  opacity: 1;
+}
+
+/* 페이드 아웃 효과 */
+.fade-leave-from {
+  opacity: 1;
+}
+
+.fade-leave-active {
+  transition: all 0.5s;
+}
+
+.fade-leave-to {
+  opacity: 0;
 }
 
 /* Setting Modal Css End */
